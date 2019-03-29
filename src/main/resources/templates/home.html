@@ -7,8 +7,8 @@
     <title>Eta Tech Assessment | Home</title>
 </head>
 <body>
-    <div th:each="character: ${characters}">
-        <p th:text="${character.getName()}" />
+    <div th:each="character, iStat : ${characters}">
+        <a th:text="${character.getName()}" th:href="'/details/' + ${iStat.index}" />
     </div>
 </body>
 </html>

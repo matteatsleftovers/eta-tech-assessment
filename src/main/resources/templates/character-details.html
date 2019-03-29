@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Eta Tech Assessment | Character Details</title>
+</head>
+<body>
+    <div>
+        <p th:text="${character.getName()}" />
+        <p th:text="${character.getBirthYear()}" />
+        <p th:text="${character.getGender()}" />
+        <p th:text="${character.getHomeworldUrl()}" />
+    </div>
+</body>
+</html>

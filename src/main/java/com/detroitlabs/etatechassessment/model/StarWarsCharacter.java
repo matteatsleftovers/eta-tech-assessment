@@ -10,6 +10,7 @@ public class StarWarsCharacter {
     private String birthYear;
     private String gender;
     private String homeworldUrl;
+    private String homeworld;
 
     @JsonProperty("name")
     public String getName() {
@@ -49,5 +50,13 @@ public class StarWarsCharacter {
     @JsonProperty("homeworld")
     public void setHomeworldUrl(String homeworldUrl) {
         this.homeworldUrl = homeworldUrl;
+    }
+
+    public String getHomeworld() {
+        return homeworld;
+    }
+
+    public void setHomeworld(String homeworld) {
+        this.homeworld = homeworld;
     }
 }
