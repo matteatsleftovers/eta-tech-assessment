@@ -1,6 +1,7 @@
 package com.detroitlabs.etatechassessment.data;
 
 import com.detroitlabs.etatechassessment.model.StarWarsCharacter;
+import com.detroitlabs.etatechassessment.model.StarWarsPlanet;
 import com.detroitlabs.etatechassessment.service.StarWarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,6 +25,8 @@ public class CharacterRepository {
             List<StarWarsCharacter> characters = new ArrayList<>();
             for (String characterUrl : characterUrls) {
                 StarWarsCharacter character = starWarsService.fetchCharacter(characterUrl);
+                StarWarsPlanet planet = starWarsService.fetchStarWarsPlanet(character.getHomeworldUrl());
+                character.setHomeworld(planet.getName());
                 characters.add(character);
             }
             charactersInFilm.put(filmNumber, characters);

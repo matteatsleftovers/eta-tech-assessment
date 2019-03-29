@@ -2,6 +2,7 @@ package com.detroitlabs.etatechassessment.service;
 
 import com.detroitlabs.etatechassessment.model.StarWarsCharacter;
 import com.detroitlabs.etatechassessment.model.StarWarsFilm;
+import com.detroitlabs.etatechassessment.model.StarWarsPlanet;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -28,6 +29,16 @@ public class StarWarsService {
                 HttpMethod.GET,
                 buildHttpEntity(),
                 StarWarsCharacter.class
+        ).getBody();
+    }
+
+    public StarWarsPlanet fetchStarWarsPlanet(String url) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                buildHttpEntity(),
+                StarWarsPlanet.class
         ).getBody();
     }
 
