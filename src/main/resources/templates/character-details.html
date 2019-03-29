@@ -7,11 +7,12 @@
     <title>Eta Tech Assessment | Character Details</title>
 </head>
 <body>
-    <div>
-        <p th:text="${character.getName()}" />
-        <p th:text="${character.getBirthYear()}" />
-        <p th:text="${character.getGender()}" />
-        <p th:text="${character.getHomeworld()}" />
-    </div>
+    <h1 th:text="'Details for ' + ${character.getName()}"/>
+    <ul>
+        <li th:text="'Name: ' + ${character.getName()}" />
+        <li th:text="'Birth Year: ' + ${character.getBirthYear()}" />
+        <li th:text="'Gender: ' + ${character.getGender()}" />
+        <li th:text="'Homeworld: ' + ${character.getHomeworld()}" />
+    </ul>
 </body>
 </html>
