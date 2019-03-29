@@ -1,20 +1,6 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE")
-    }
-}
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
-bootJar {
-    baseName = 'gs-spring-boot'
-    version =  '0.1.0'
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
 }
 
 group 'com.detroitlabs'
@@ -28,6 +14,6 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE')
-    testCompile("junit:junit")
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.1.3.RELEASE'
 }
